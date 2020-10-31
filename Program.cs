@@ -34,8 +34,8 @@ namespace Clock
                 cord[1, 1, 0] = (int)(Math.Cos((Math.PI / 60) * ((realTime.Minute - 15) * 2) - (45 / 60)) * 200) + 270;
                 cord[1, 1, 1] = (int)(Math.Sin((Math.PI / 60) * ((realTime.Minute - 15) * 2) - (45 / 60)) * 100) + 120;
 
-                cord[0, 1, 0] = (int)(Math.Cos((Math.PI / 24) * ((realTime.Hour - 6) * 2) - (18 / 24)) * 200) + 270;
-                cord[0, 1, 1] = (int)(Math.Sin((Math.PI / 24) * ((realTime.Hour - 6) * 2) - (18 / 24)) * 100) + 120;
+                cord[0, 1, 0] = (int)(Math.Cos((Math.PI / 24) * (((realTime.Hour - 18) * 2) - (6))) * 200) + 270;
+                cord[0, 1, 1] = (int)(Math.Sin((Math.PI / 24) * (((realTime.Hour - 18) * 2) - (6))) * 100) + 120;
 
                 CheckField();
                 SetClock();
@@ -110,7 +110,8 @@ namespace Clock
                         if (field[x, y] != 0)
                         {
                             Console.ForegroundColor = colorList[field[x, y] - 1];
-                            Console.Write('■');
+                            Console.Write('█');
+                            //Console.Write('■');
                             Console.ResetColor();
                         }
                         else
